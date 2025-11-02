@@ -16,7 +16,7 @@ services:
 
   api:
     build:
-      context: ./visits-count-back
+      context: .
       dockerfile: Dockerfile
     environment:
       REDIS_URL: redis://redis:6379
@@ -28,3 +28,5 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+volumes:
+  redis-data:
