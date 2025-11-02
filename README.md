@@ -5,6 +5,17 @@ Built with **Express**, **Redis**, and tested using **Vitest + Supertest**.
 
 ---
 
+## Run
+
+# 1. Clone the repo
+
+git clone https://github.com/haimkal/visits-count-backend.git
+cd visits-count-backend
+
+# 2. Run with Docker
+
+docker compose up --build -d
+
 ## 📡 Endpoints
 
 | Method | Path      | Description                                    |
@@ -13,16 +24,29 @@ Built with **Express**, **Redis**, and tested using **Vitest + Supertest**.
 | `POST` | `/visits` | Increments the visit count for a given country |
 | `GET`  | `/visits` | Returns visit counts for all countries         |
 
-### Example Request
+### Example Request: POST /visits
 
 ```bash
 curl -X POST http://localhost:4000/visits   -H "Content-Type: application/json"   -d '{"country":"us"}'
 ```
 
-### Example Response
+### Example Response: POST /visits
 
 ```json
 { "country": "us", "count": 42 }
+```
+
+### Example Request: GET /visits
+
+```bash
+# Get all counts
+curl http://localhost:4000/visits
+```
+
+### Example Response: GET /visits
+
+```json
+{ "us": 2, "cy": 1 }
 ```
 
 ---
@@ -38,13 +62,8 @@ docker compose up --build -d
 **Services:**
 
 - API: [http://localhost:4000](http://localhost:4000)
-- Redis: `localhost:6380`
-
-Test health:
-
-```bash
-curl http://localhost:4000/health
-```
+- Redis (from host): `localhost:6380`
+  _Note: Inside the container Redis listens on 6379, but it’s mapped to 6380 on the host._
 
 ---
 
