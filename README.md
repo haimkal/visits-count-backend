@@ -5,16 +5,37 @@ Built with **Express**, **Redis**, and tested using **Vitest + Supertest**.
 
 ---
 
-## Run
+## 🐳 Run with Docker Compose
 
-# 1. Clone the repo
+This spins up both **Redis** and the **API**
 
+### 1. Clone the repo
+
+```bash
 git clone https://github.com/haimkal/visits-count-backend.git
+```
+
+### 2. Enter repo
+
+```bash
 cd visits-count-backend
+```
 
-# 2. Run with Docker
+### 3. Run with Docker
 
+```bash
 docker compose up --build -d
+```
+
+---
+
+**Services:**
+
+- API: [http://localhost:4000](http://localhost:4000)
+- Redis (from host): `localhost:6380`
+  _Note: Inside the container Redis listens on 6379, but it’s mapped to 6380 on the host._
+
+---
 
 ## 📡 Endpoints
 
@@ -48,22 +69,6 @@ curl http://localhost:4000/visits
 ```json
 { "us": 2, "cy": 1 }
 ```
-
----
-
-## 🐳 Run with Docker Compose
-
-This spins up both **Redis** and the **API**:
-
-```bash
-docker compose up --build -d
-```
-
-**Services:**
-
-- API: [http://localhost:4000](http://localhost:4000)
-- Redis (from host): `localhost:6380`
-  _Note: Inside the container Redis listens on 6379, but it’s mapped to 6380 on the host._
 
 ---
 
