@@ -1,0 +1,39 @@
+# תלות
+node_modules/
+
+# בילדים/ארטיפקטים
+dist/
+build/
+coverage/
+.nyc_output/
+
+# קונפיג סודי/מקומי
+.env
+.env.*
+!.env.example
+
+# לוגים
+logs/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# קאש/זמני
+.eslintcache
+.cache/
+.tmp/
+
+# IDE/OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Docker / קבצי לוקאל
+docker-compose.override.yml
+*.local.yml
+
+# PID וכד'
+pids
+*.pid
