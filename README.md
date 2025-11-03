@@ -105,10 +105,14 @@ npm run dev
 
 ## 🧪 Tests
 
-Integration tests using **Vitest + Supertest**:
+To run the automated integration tests (using **Vitest + Supertest**):
+
+1. Make sure Redis is running (e.g., via `docker compose up -d redis`)
+2. Then run:
 
 ```bash
-npm test
+   npm ci
+   npm test
 ```
 
 > Tests run against a real Redis instance and use isolated keys.
